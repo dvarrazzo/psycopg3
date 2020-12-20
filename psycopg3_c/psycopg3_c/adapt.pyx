@@ -19,7 +19,7 @@ from cpython.bytes cimport PyBytes_AsStringAndSize
 from cpython.bytearray cimport PyByteArray_FromStringAndSize, PyByteArray_Resize
 from cpython.bytearray cimport PyByteArray_AS_STRING
 
-from psycopg3_c cimport libpq as impl
+from psycopg3_c.pq cimport libpq as impl
 from psycopg3_c.adapt cimport cloader_func, get_context_func
 from psycopg3_c.pq_cython cimport Escaping, _buffer_as_string_and_size
 
