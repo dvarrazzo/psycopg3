@@ -5,7 +5,7 @@ Cython adapters for boolean.
 # Copyright (C) 2020 The Psycopg Team
 
 from psycopg3.pq import Format
-from psycopg3_c cimport oids
+from _psycopg3 cimport oids
 
 
 cdef class BoolDumper(CDumper):

@@ -13,9 +13,9 @@ from cpython.tuple cimport PyTuple_New, PyTuple_SET_ITEM
 
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
-from psycopg3_c cimport oids
-from psycopg3_c.pq cimport libpq
-from psycopg3_c.pq_cython cimport PGresult
+from _psycopg3 cimport oids
+from pq_cython cimport libpq
+from pq_cython.pgresult cimport PGresult
 
 from psycopg3 import errors as e
 from psycopg3.pq import Format

@@ -48,7 +48,7 @@ def update_python_oids() -> None:
 
 def update_cython_oids() -> None:
     queries = [version_sql, cython_oids_sql]
-    fn = os.path.dirname(__file__) + "/../psycopg3_c/psycopg3_c/oids.pxd"
+    fn = os.path.dirname(__file__) + "/../psycopg3_c/_psycopg3/oids.pxd"
     update_file(fn, queries)
 
 

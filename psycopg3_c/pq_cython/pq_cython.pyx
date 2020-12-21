@@ -4,7 +4,7 @@ libpq Python wrapper using cython bindings.
 
 # Copyright (C) 2020 The Psycopg Team
 
-from psycopg3_c.pq cimport libpq
+from pq_cython cimport libpq
 
 from psycopg3.pq.misc import PQerror, error_message
 
@@ -19,9 +19,9 @@ def version():
     return libpq.PQlibVersion()
 
 
-include "pq/pgconn.pyx"
-include "pq/pgresult.pyx"
-include "pq/pgcancel.pyx"
-include "pq/conninfo.pyx"
-include "pq/escaping.pyx"
-include "pq/pqbuffer.pyx"
+include "pgconn.pyx"
+include "pgresult.pyx"
+include "pgcancel.pyx"
+include "conninfo.pyx"
+include "escaping.pyx"
+include "pqbuffer.pyx"

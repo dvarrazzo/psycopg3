@@ -2,3 +2,7 @@
 /build
 /dist
 /psycopg3_c.egg-info
+_psycopg3/_psycopg3.c
+pq_cython/pq_cython.c
+*.html
+*.so

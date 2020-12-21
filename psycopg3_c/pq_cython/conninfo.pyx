@@ -7,7 +7,7 @@ psycopg3_c.pq_cython.Conninfo object implementation.
 from psycopg3.pq.misc import ConninfoOption
 
 
-class Conninfo:
+cdef class Conninfo:
     @classmethod
     def get_defaults(cls) -> List[ConninfoOption]:
         cdef libpq.PQconninfoOption *opts = libpq.PQconndefaults()

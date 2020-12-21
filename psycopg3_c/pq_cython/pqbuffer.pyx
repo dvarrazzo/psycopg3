@@ -65,4 +65,3 @@ cdef int _buffer_as_string_and_size(
         PyBuffer_Release(&buf)
     else:
         raise TypeError(f"bytes or buffer expected, got {type(data)}")
-

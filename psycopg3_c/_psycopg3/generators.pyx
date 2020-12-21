@@ -7,12 +7,14 @@ C implementation of generators for the communication protocols with the libpq
 import logging
 from typing import List
 
+from psycopg3 import pq
 from psycopg3 import errors as e
 from psycopg3.proto import PQGen
 from psycopg3.waiting import Wait, Ready
-from psycopg3 import pq
-from psycopg3_c.pq cimport libpq
-from psycopg3_c.pq_cython cimport PGconn, PGresult
+
+from pq_cython cimport libpq
+from pq_cython.pgconn cimport PGconn
+from pq_cython.pgresult cimport PGresult
 
 cdef object WAIT_W = Wait.W
 cdef object WAIT_R = Wait.R

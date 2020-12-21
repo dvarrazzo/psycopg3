@@ -19,9 +19,10 @@ from cpython.bytes cimport PyBytes_AsStringAndSize
 from cpython.bytearray cimport PyByteArray_FromStringAndSize, PyByteArray_Resize
 from cpython.bytearray cimport PyByteArray_AS_STRING
 
-from psycopg3_c.pq cimport libpq
-from psycopg3_c.adapt cimport cloader_func, get_context_func
-from psycopg3_c.pq_cython cimport Escaping, _buffer_as_string_and_size
+from pq_cython cimport libpq
+from pq_cython.escaping cimport Escaping
+from pq_cython.pqbuffer cimport _buffer_as_string_and_size
+from _psycopg3.adapt cimport cloader_func, get_context_func
 
 from psycopg3 import errors as e
 from psycopg3.pq import Format

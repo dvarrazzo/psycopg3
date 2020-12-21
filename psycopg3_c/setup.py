@@ -37,7 +37,7 @@ class psycopg3_build_ext(build_ext):
 
         # In the sdist there are not .pyx, only c, so we don't need Cython
         # Otherwise Cython is a requirement and is be used to compile pyx to c
-        if os.path.exists("psycopg3_c/_psycopg3.pyx"):
+        if os.path.exists("_psycopg3/_psycopg3.pyx"):
             from Cython.Build import cythonize
 
         # Add the include dir for the libpq.
@@ -72,21 +72,21 @@ class psycopg3_build_ext(build_ext):
 # Some details missing, to be finished by psycopg3_build_ext.finalize_options
 pgext = Extension(
     "psycopg3_c._psycopg3",
-    ["psycopg3_c/_psycopg3.c"],
+    ["_psycopg3/_psycopg3.c"],
     libraries=["pq"],
     include_dirs=[],
 )
 
 pqext = Extension(
     "psycopg3_c.pq_cython",
-    ["psycopg3_c/pq_cython.c"],
+    ["pq_cython/pq_cython.c"],
     libraries=["pq"],
     include_dirs=[],
 )
 
 setup(
     version=version,
-    ext_modules=[pgext, pqext],
+    ext_modules=[pqext, pgext],
     cmdclass={"build_ext": psycopg3_build_ext},
     # For some reason pacakge_data doesn't work in setup.cfg
     package_data={
